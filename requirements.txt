@@ -1,0 +1,29 @@
+flask
+flask-cors
+gunicorn
+speechrecognition
+pyttsx3
+pyaudio
+requests
+google-generativeai
+pillow
+pyautogui
+pytesseract
+pyperclip
+qrcode
+psutil
+setuptools
+wheel
+
+# --- Optional libraries for advanced features (install if desired) ---
+# Document / PDF reading (Vision AI, Document AI)
+PyPDF2
+python-docx
+openpyxl
+python-pptx
+# Computer vision & window control (Computer Control Agent)
+opencv-python
+pygetwindow
+# System notifications & encryption (vault, notifications)
+plyer
+cryptography

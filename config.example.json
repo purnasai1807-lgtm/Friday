@@ -1,0 +1,15 @@
+{
+  "gemini_api_key": "YOUR_GEMINI_API_KEY_HERE",
+  "gemini_model": "gemini-1.5-flash",
+  "wake_words": ["wake up friday", "hey friday", "ok friday", "hello friday", "friday"],
+  "sleep_words": ["go to sleep friday", "sleep friday", "shut down friday", "goodbye friday"],
+  "voice_enabled": true,
+  "tts_enabled": true,
+  "server_host": "0.0.0.0",
+  "server_port": 5000,
+  "always_on": true,
+  "auto_start": true,
+  "sensitive_action_permission": true,
+  "permission_actions": ["shutdown", "restart", "open_program", "open_website", "web_search", "delete_file", "send_email"],
+  "wake_command": "friday"
+}

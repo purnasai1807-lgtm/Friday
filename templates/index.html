@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FRIDAY - AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css?v=3" />
+  </head>
+  <body>
+    <div class="gif-bg" id="gifBg"></div>
+    <div class="gif-overlay"></div>
+
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <div class="arc-ring"></div>
+          <h1>FRIDAY</h1>
+          <p class="subtitle">AI Assistant</p>
+        </div>
+
+        <div class="status-card">
+          <div class="status-dot" id="statusDot"></div>
+          <span id="statusText">Standby</span>
+        </div>
+
+        <div class="mic-status" id="micStatus">
+          <span class="mic-dot"></span>
+          <span id="micText">Mic</span>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="voice-display">
+          <div class="voice-orb" id="voiceOrb"></div>
+          <div class="voice-status" id="voiceStatus">
+            Say "FRIDAY" to wake me
+          </div>
+          <div class="voice-last" id="voiceLast"></div>
+          <div class="action-feedback" id="actionFeedback"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="permissionModal">
+      <div class="modal">
+        <h3>Permission Required</h3>
+        <p id="permissionText">FRIDAY needs your permission to continue.</p>
+        <div class="modal-actions">
+          <button class="btn modal-yes" id="permYes">Allow</button>
+          <button class="btn modal-no" id="permNo">Deny</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="debug-bar" id="debugBar">
+      <span id="debugServer">Server: checking...</span>
+      <span id="debugBrowser">Browser: checking...</span>
+      <span id="debugMic">Mic: checking...</span>
+    </div>
+
+    <script src="/static/script.js?v=4"></script>
+  </body>
+</html>

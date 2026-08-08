@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Env / secrets
+.env
+.config
+config.json
+
+# FRIDAY data files (do not commit user data/secrets)
+.vault_key
+memory.json
+intelligence_data.json
+learning_data.json
+knowledge_index.json
+ecosystem_data.json
+emotion_state.json
+sync_state.json
+sync_memory.json
+missions.json
+learning.json
+vision_cache/
+*.log
+
+# Build artifacts
+dist/
+build/
+*.spec
+screen_capture.png
+screen_analyze.png
+screenshot_*.png
+test_out*.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+.qodo/
