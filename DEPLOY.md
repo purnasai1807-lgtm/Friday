@@ -3,6 +3,11 @@
 This guide shows how to publish the FRIDAY AI **web app** to a cloud host so it
 is live on the internet and accessible from any phone/laptop/browser.
 
+> **🚀 Auto-deploy is wired up.** This repo includes `.github/workflows/deploy.yml`
+> which triggers a Render deployment automatically on every push to `main`.
+> You only need to (1) create the Render service and (2) add its Deploy Hook URL
+> as a GitHub secret — then every future push deploys itself.
+
 > **Important:** FRIDAY's _desktop-only_ features (opening apps, controlling the
 > screen, dragging files, installing software) only work on your local PC.
 > On a cloud server, the **voice + AI + LLM + research + memory** features work
@@ -20,6 +25,23 @@ is live on the internet and accessible from any phone/laptop/browser.
 | `runtime.txt`      | Pins Python version to 3.11.9                          |
 | `requirements.txt` | All Python dependencies (gunicorn added)               |
 | `.gitignore`       | Excludes secrets/user data from being committed to git |
+
+---
+
+## ✅ Enable auto-deploy (2 quick steps)
+
+1. **Create the Render service** (one-time):
+   - Go to https://render.com → **New** → **Blueprint** → connect your GitHub **`Friday`** repo.
+   - Render reads `render.yaml` and creates the service. Note the public URL it gives you.
+   - In Render → your new **Web Service** → **Settings** → **Deploy Hook**, copy the **Deploy Hook URL**.
+2. **Add the hook as a GitHub secret** (one-time):
+   - On GitHub → your **Friday** repo → **Settings** → **Secrets and variables** → **Actions** → **New repository secret**.
+   - Name: `RENDER_DEPLOY_HOOK`, Value: paste the Deploy Hook URL.
+   - Also add `GEMINI_API_KEY` as a secret (your Gemini key) if you want the AI brain live.
+
+After that, **every push to `main` triggers an automatic deployment** via
+`.github/workflows/deploy.yml`. You can also click **Actions → Deploy FRIDAY AI to Render → Run workflow**
+to deploy manually anytime.
 
 ---
 
