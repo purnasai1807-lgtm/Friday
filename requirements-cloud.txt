@@ -1,0 +1,19 @@
+# Cloud / public-host dependencies for FRIDAY AI web app.
+# This list is safe for a headless cloud server (Render/Railway/Heroku).
+# It intentionally EXCLUDES desktop-only / audio / display packages such as
+# pyaudio, pyttsx3, pyautogui, pytesseract, opencv, pygetwindow, plyer.
+# Those only work on a real PC and are gracefully skipped by the app.
+
+flask
+flask-cors
+gunicorn
+requests
+google-generativeai
+pillow
+psutil
+
+# Pure-Python document reading (Vision/Document AI) - safe on cloud
+PyPDF2
+python-docx
+openpyxl
+python-pptx

@@ -3,6 +3,57 @@
 This guide shows how to publish the FRIDAY AI **web app** to a cloud host so it
 is live on the internet and accessible from any phone/laptop/browser.
 
+---
+
+## 🚀 Quick start: put FRIDAY live on the internet (no app store, no same Wi-Fi)
+
+This is the **recommended** way to make FRIDAY public. It runs on a free cloud
+server, so it is online **24/7** — even when your PC and VS Code are **closed**,
+and anyone anywhere can open it in their browser (any Wi-Fi / mobile data).
+
+> **What works online:** the AI brain, voice (via the browser's microphone),
+> web search, weather, memory, notes, multi-agent features, and the LLM.
+> **What stays local/desktop-only:** opening apps _on your PC_, controlling your
+> screen, typing/clicking on your PC. These gracefully stay unavailable online.
+
+### Step 1 — Put the code on GitHub (one-time)
+
+1. Create a free account at https://github.com if you don't have one.
+2. Click **New repository** → name it `friday-ai` → make it **Public** (or Private, either works) → **Create**.
+3. Upload these files to it (drag & drop the whole project folder, or use Git):
+   ```bash
+   cd c:/Users/HP/Desktop/FRIDAY_AN_AI
+   git init
+   git add .
+   git commit -m "FRIDAY AI public deploy"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/friday-ai.git
+   git push -u origin main
+   ```
+
+### Step 2 — Create a free Render.com service (one-time)
+
+1. Go to https://render.com → **Sign up** for free (GitHub sign-in is easiest).
+2. Click **New** → **Blueprint** → connect your GitHub account → choose the `friday-ai` repo.
+3. Render reads `render.yaml` automatically and creates the web service.
+4. Click **Apply**. Render builds and deploys (~2–4 minutes).
+5. When done, you get a public URL like `https://friday-ai.onrender.com`.
+
+### Step 3 — Add your Gemini API key (recommended, free)
+
+1. Get a free key at https://aistudio.google.com/app/apikey
+2. In Render → your service → **Environment** → **Add Environment Variable**:
+   - Key: `GEMINI_API_KEY`
+   - Value: your key
+3. Save — Render redeploys automatically.
+
+### Step 4 — Share it!
+
+Open `https://friday-ai.onrender.com` on any phone/laptop and talk to FRIDAY.
+Share that link with anyone — they don't need your Wi-Fi, and your PC can stay off.
+
+---
+
 > **🚀 Auto-deploy is wired up.** This repo includes `.github/workflows/deploy.yml`
 > which triggers a Render deployment automatically on every push to `main`.
 > You only need to (1) create the Render service and (2) add its Deploy Hook URL
